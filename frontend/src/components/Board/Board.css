@@ -1,0 +1,22 @@
+.board-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  background-color: #f4f5f7; /* Light gray background */
+  overflow-x: auto;
+}
+
+.board-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #172b4d;
+}
+
+.board-columns {
+  display: flex;
+  gap: 1.5rem;
+  height: 100%;
+  align-items: flex-start;
+}
