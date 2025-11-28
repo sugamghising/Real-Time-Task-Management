@@ -28,6 +28,10 @@ npm run dev
 - `npm run dev` – Starts the development server for the respective package.
 - `npm run build` – Builds the production bundle.
 
+## Real-Time Updates
+
+The application uses **Socket.io** for real‑time communication between the server and clients. See `backend/src/config/socket.ts` for the socket configuration.
+
 ## Contributing
 
 Feel free to open issues or submit pull requests.
