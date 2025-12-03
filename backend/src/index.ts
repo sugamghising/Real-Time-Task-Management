@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import http from "http";
 import { initSocket } from "./config/socket";
+import { connectDB } from "./config/database";
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,12 @@ app.use(morgan("dev"));
 const server = http.createServer(app);
 initSocket(server);
 
-server.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+// Connect to MongoDB and start server
+connectDB().then(() => {
+    server.listen(PORT, () => {
+        console.log(`Server started on port ${PORT}`);
+    });
+}).catch((error) => {
+    console.error("Failed to start server:", error);
+    process.exit(1);
 });
