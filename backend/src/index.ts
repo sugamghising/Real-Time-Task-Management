@@ -28,3 +28,8 @@ connectDB().then(() => {
     console.error("Failed to start server:", error);
     process.exit(1);
 });
+
+
+app.get('/', () => {
+    console.log("Connected to backend.");
+})
