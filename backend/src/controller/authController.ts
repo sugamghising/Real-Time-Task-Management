@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { User, IUser } from "../models/User.js";
-import { issueJwt } from "../config/oauth.js";
+import { User, IUser } from "../models/User";
+import { issueJwt } from "../config/oauth";
 
 /**
  * Register a new user with email and password
@@ -143,7 +143,6 @@ export const login = async (req: Request, res: Response): Promise<void> => {
  */
 export const getProfile = async (req: Request, res: Response): Promise<void> => {
     try {
-        // Assuming user ID is attached to req by auth middleware
         const userId = (req as any).user?.sub;
 
         if (!userId) {

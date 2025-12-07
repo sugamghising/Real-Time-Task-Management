@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { issueJwt } from "../config/oauth.js";
+import { issueJwt } from "../config/oauth";
 
 /**
  * Handle successful OAuth callback
